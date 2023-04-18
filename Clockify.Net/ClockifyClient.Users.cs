@@ -32,6 +32,15 @@ namespace Clockify.Net
         }
 
         /// <summary>
+        /// Get user's info
+        /// </summary>
+        public async Task<Response<MemberProfileResponse>> GetMemberProfileAsync(string workspaceId, string userId)
+        {
+            var request = new RestRequest($"workspaces/{workspaceId}/member-profile/{userId}");
+            return Response<MemberProfileResponse>.FromRestResponse(await _client.ExecuteGetAsync<MemberProfileResponse>(request).ConfigureAwait(false));
+        }
+
+        /// <summary>
         /// Set active workspace for user
         /// </summary>
         [Obsolete("Removed from the experimental API")]
