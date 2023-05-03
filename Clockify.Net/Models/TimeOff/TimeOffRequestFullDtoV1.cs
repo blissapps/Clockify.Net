@@ -6,7 +6,7 @@ namespace Clockify.Net.Models.TimeOff
     {
         public double Balance { get; set; }
         public double BalanceDiff { get; set; }
-        public DateTime CreatedAt { get; set; }
+        public string CreatedAt { get; set; }
         public string Id { get; set; }
         public string? Note { get; set; }
         public string PolicyId { get; set; }
